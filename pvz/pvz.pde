@@ -1,4 +1,5 @@
 ArrayList<Sun> Suns = new ArrayList<Sun>(); 
+ArrayList<Projectile> projectiles = new ArrayList<Projectile>(); 
 IntList antiLag = new IntList();
 
 Level level = new Level();
@@ -30,6 +31,12 @@ void draw() {
     b.update(i);
     b.checkEdge();
     b.display();
+  }
+  
+  for (int i = 0; i < projectiles.size(); i++) {
+    Projectile p = projectiles.get(i);
+    p.update();
+    p.render();
   }
 
   antiLag.sort();
