@@ -1,7 +1,7 @@
 class Level {
   float rows = 4;
   float columns = 9;
-  float topOffset = 100;
+  float topOffset = 150;
   float leftOffset = 75;
   float rightOffset = 50;
   float bottomOffset = 50;
