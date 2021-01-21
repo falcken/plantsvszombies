@@ -1,0 +1,30 @@
+ArrayList<Sun> Suns= new ArrayList<Sun>();
+IntList antiLag = new IntList();
+
+
+void setup() {
+  size(600,600);
+  
+  
+  Suns.add(new Sun());
+  
+}
+
+void draw() {
+ for (int i=0; i<Suns.size(); i++) {
+    Sun b=Suns.get(i);
+    b.update(i);
+    b.checkEdge();
+    b.display();
+  }
+  
+  antiLag.sort();
+  if (antiLag.size()>0) {
+    for (int i=0; i<antiLag.size(); i++) {
+      antiLag.sub(i, i);
+      Suns.remove(antiLag.get(i));
+    }
+  }
+  antiLag.clear();
+  
+}
