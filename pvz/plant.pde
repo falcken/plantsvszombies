@@ -18,7 +18,9 @@ class Plant {
   }
   
   void shoot() {
-    
+    if (millis() % 2000 == 0) {
+      
+    }
   }
   
 }
