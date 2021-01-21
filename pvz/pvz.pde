@@ -18,11 +18,13 @@ void draw() {
   background(255);
   level.render();
   shop.render();
-    for (int i=0; i<Suns.size(); i++) {
-    Sun b=Suns.get(i);
-    b.update(i);
-    b.checkEdge();
-    b.display();
+  SunRender();
+}
+
+void SunRender() {
+  for (int i=0; i<Suns.size(); i++) {
+    Sun s=Suns.get(i);
+    s.render(i);
   }
   antiLag.sort();
   if (antiLag.size()>0) {
