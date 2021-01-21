@@ -1,7 +1,10 @@
+Level level = new Level();
+
 void setup() {
-  size(600,600);
+  size(1024, 768);
 }
 
 void draw() {
-  
+  background(255);
+  level.render();
 }
