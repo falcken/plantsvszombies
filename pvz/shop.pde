@@ -3,6 +3,7 @@ class Shop {
   float sizeX = 550;
   float sizeY = 120;
   float borderWidth = 10;
+  int balance=0;
   
   Shop(float posX, float posY) {
     this.posX = posX;
@@ -25,7 +26,7 @@ class Shop {
     // sun balance
     fill(0);
     textSize(16);
-    text("1050", posX+borderWidth+30, posY+borderWidth+85);
+    text(balance, posX+borderWidth+30, posY+borderWidth+85);
   }
   
 }

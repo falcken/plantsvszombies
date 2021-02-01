@@ -17,7 +17,6 @@ void setup() {
   shopSun.resize(70, 70);
   plant1Sprite = loadImage("plant1.png");
   plant1Sprite.resize(95, 97);
-  Suns.add(new Sun());
 }
 
 void draw() {
@@ -30,13 +29,20 @@ void draw() {
     p.update();
     p.render();
   }
+  plant1.render();
+  if (frameCount%360==0) {
+    Suns.add(new Sun());
+  }
 }
+
+
+
 
 void SunRender() {
   for (int i=0; i<Suns.size(); i++) {
     Sun s=Suns.get(i);
     s.render(i);
-    plant1.render();
+    s.clicked(i);
   }
 
 
