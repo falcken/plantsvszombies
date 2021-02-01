@@ -2,14 +2,15 @@ class Sun {
   PVector location;
   PVector velocety;
   float distance;
-  int d=25;
+  int d=150;
+  int margin = 10;
   int lifetime= 360;
   int time;
   int redFade=255;
 
   Sun() {
     location = new PVector (random(width/3, width*2/3), 0);
-    velocety = new PVector (random(-2, 2), random(1, 2));
+    velocety = new PVector (random(-2,2), random(1, 2));
     distance = random (height/3, height*2/3);
   }
 
@@ -25,7 +26,7 @@ class Sun {
     else if (time >lifetime-128) redFade-=2;
     tint(255, redFade, redFade);
     //edge colision
-    if (0>location.x-d/2 || location.x+d/2>width) {
+    if (0>location.x+margin || location.x+d+margin>width) {
       velocety.x=velocety.x*-1;
     }
     image(sunSprite, location.x, location.y);
@@ -34,7 +35,7 @@ class Sun {
 
   void clicked(int i) {
     if (mousePressed) {
-      if (mouseX>location.x+10&&mouseX<location.x+160&&mouseY>location.y+10&&mouseY<location.y+160){
+      if (mouseX>location.x+margin&&mouseX<location.x+d+margin&&mouseY>location.y+margin&&mouseY<location.y+d+margin){
       antiLag.append(i);
       shop.balance+=50;
       }
