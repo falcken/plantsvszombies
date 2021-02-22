@@ -8,12 +8,12 @@ class Plant {
   float posCol, posRow;
   int lifetime = 0;
   int type = 1;
-  
+
   Plant(float posCol, float posRow) {
     this.posCol = posCol;
     this.posRow = posRow;
   }
-  
+
   void render() {
     image(plant1Sprite, posCol*tileWidth+leftOffset+marginLeft, posRow*tileHeight+topOffset+marginTop);
     lifetime++;
@@ -21,10 +21,9 @@ class Plant {
       shoot();
     }
   }
-  
+
   void shoot() {
-    println("pew");
+    //  println("pew");
     projectiles.add(new Projectile(posCol*tileWidth+leftOffset+80, posRow*tileHeight+topOffset+marginTop+30));
   }
-  
 }

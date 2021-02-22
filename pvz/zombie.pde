@@ -2,13 +2,13 @@ class zombie {
   float posX, posY;
   float speed;
   boolean dead = false;
-  float topOffset = 150;
+  float topOffset = 105;
   float leftOffset = 75;
   float tileWidth = 100;
   float tileHeight = 125;
   float marginTop = 15;
   float marginLeft = 5;
-  int posCol=8; 
+  int posCol=9; 
   int posRow;
 
 
@@ -24,11 +24,10 @@ class zombie {
 
   void render() {
     if (posX < width-500 || dead == false) {
-      println(2);
       strokeWeight(4);
       stroke(0);
       fill(186, 246, 87);
-      ellipse(posX, posY, 25, 25);
+      image(zombieSprite,posX, posY,100,125);
     } else {
       dead = true;
     }

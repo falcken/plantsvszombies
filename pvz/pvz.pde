@@ -9,11 +9,13 @@ Plant plant1 = new Plant(2, 1);
 PImage sunSprite;
 PImage shopSun;
 PImage plant1Sprite;
+PImage zombieSprite;
 
 void setup() {
   size(1024, 768);
   sunSprite = loadImage("sol.png");
   shopSun = loadImage("sol.png");
+  zombieSprite = loadImage("zombie.png");
   shopSun.resize(70, 70);
   plant1Sprite = loadImage("plant1.png");
   plant1Sprite.resize(95, 97);
@@ -38,10 +40,8 @@ void draw() {
   if (frameCount%360==1) {
     Suns.add(new Sun());
   }
-  //ændre til 0
-  if (frameCount%500==50) {
+  if (frameCount%500==0) {
     zombies.add(new zombie(int(random(4))));
-    print(1);
   }
 }
 
