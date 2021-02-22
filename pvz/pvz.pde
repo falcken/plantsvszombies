@@ -36,6 +36,13 @@ void draw() {
     zombie z=zombies.get(i);
     z.update();
     z.render();
+    for (int u = 0; u < projectiles.size(); u++) {
+      z.coll(projectiles.get(u));
+    }
+    z.eat(plant1);
+   /*for (int y = 0; y < plants.size(); y++) {
+     z.eat(plants.get(y));
+   }*/
   }
   if (frameCount%360==1) {
     Suns.add(new Sun());
