@@ -25,13 +25,13 @@ void draw() {
   background(255);
   level.render();
   shop.render();
-  SunRender();
   for (int i = 0; i < projectiles.size(); i++) {
     Projectile p = projectiles.get(i);
     p.update();
     p.render();
   }
   plant1.render();
+  SunRender();
   for (int i=0; i<zombies.size(); i++) {
     zombie z=zombies.get(i);
     z.update();
@@ -40,7 +40,7 @@ void draw() {
   if (frameCount%360==1) {
     Suns.add(new Sun());
   }
-  if (frameCount%500==0) {
+  if (frameCount%int(random(1, 50000))==1) {
     zombies.add(new zombie(int(random(4))));
   }
 }

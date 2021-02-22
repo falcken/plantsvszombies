@@ -10,6 +10,7 @@ class zombie {
   float marginLeft = 5;
   int posCol=9; 
   int posRow;
+  int hp=10;
 
 
   zombie(int posRow) {
