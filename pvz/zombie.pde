@@ -1,19 +1,36 @@
 class zombie {
+  float posX, posY;
+  float speed;
+  boolean dead = false;
   float topOffset = 150;
-  int a = 1024;
-  int posRow;
-  int speed=0;
+  float leftOffset = 75;
   float tileWidth = 100;
   float tileHeight = 125;
-  int d=50;
+  float marginTop = 15;
+  float marginLeft = 5;
+  int posCol=8; 
+  int posRow;
 
-  zombie(int posRow) {  
-    this.posRow=posRow;
+
+  zombie(int posRow) {
+    this.posY = posRow*tileHeight+topOffset+marginTop+30;
+    speed = -0.5;
+    this.posX=posCol*tileWidth+leftOffset+80;
+  }
+
+  void update() {
+    posX = posX+speed;
   }
 
   void render() {
-
-    ellipse(a, posRow*tileHeight+topOffset, d, d);
-    //x_pos=x_pos-speed;
+    if (posX < width-500 || dead == false) {
+      println(2);
+      strokeWeight(4);
+      stroke(0);
+      fill(186, 246, 87);
+      ellipse(posX, posY, 25, 25);
+    } else {
+      dead = true;
+    }
   }
 }
