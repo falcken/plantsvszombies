@@ -9,13 +9,13 @@ Plant plant1 = new Plant(2, 1);
 PImage sunSprite;
 PImage shopSun;
 PImage plant1Sprite;
-PImage zombieSprite;
+PImage zombie1Sprite;
 
 void setup() {
   size(1024, 768);
   sunSprite = loadImage("sol.png");
   shopSun = loadImage("sol.png");
-  zombieSprite = loadImage("zombie.png");
+  zombie1Sprite = loadImage("zombie1.png");
   shopSun.resize(70, 70);
   plant1Sprite = loadImage("plant1.png");
   plant1Sprite.resize(95, 97);
