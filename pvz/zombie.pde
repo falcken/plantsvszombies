@@ -25,10 +25,7 @@ class zombie {
 
   void render() {
     if (posX < width-500 || dead == false) {
-      strokeWeight(4);
-      stroke(0);
-      fill(186, 246, 87);
-      image(zombieSprite,posX, posY,100,125);
+      image(zombie1Sprite,posX, posY,100,125);
     } else {
       dead = true;
     }
