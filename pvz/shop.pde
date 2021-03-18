@@ -28,7 +28,7 @@ class Shop {
     textSize(16);
     text(balance, posX+borderWidth+30, posY+borderWidth+85);
     
-    //
+ 
     
 
     //plants
@@ -44,6 +44,12 @@ class Shop {
     //price
     fill(0);
     textSize(16);
-    text(100, posX+borderWidth+30, posY+borderWidth+85);
+    text(100, posX+borderWidth+130, posY+borderWidth+85);
+    
+   if(mousePressed && mouseX>posX+borderWidth+110 && mouseX<posX+borderWidth+110+100 && mouseY>posY+borderWidth &&mouseY<posY+borderWidth+sizeY-2*borderWidth && balance>=100){
+     placeable.hidden=false;
+     balance-=100;
+   }
+  
   }
 }
