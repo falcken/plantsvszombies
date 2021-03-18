@@ -1,7 +1,7 @@
 class Placeable {
   int item = 0;
   float posX, posY;
-  boolean hidden = false;
+  boolean hidden = true;
   
   // level specs
   float topOffset = 150;
