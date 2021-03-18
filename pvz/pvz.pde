@@ -1,11 +1,12 @@
 ArrayList<Sun> Suns = new ArrayList<Sun>(); 
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>(); 
 ArrayList<zombie> zombies = new ArrayList<zombie>(); 
+ArrayList<Plant> plants = new ArrayList<Plant>(); 
+
 IntList antiLag = new IntList();
 
 Level level = new Level();
 Shop shop = new Shop(30, 0);
-Plant plant1 = new Plant(2, 1);
 PImage sunSprite;
 PImage shopSun;
 PImage plant1Sprite;
@@ -19,6 +20,16 @@ void setup() {
   shopSun.resize(70, 70);
   plant1Sprite = loadImage("plant1.png");
   plant1Sprite.resize(95, 97);
+  
+  // test plants
+  
+  plants.add(new Plant(2, 0));
+  plants.add(new Plant(2, 1));
+  plants.add(new Plant(2, 2));
+  plants.add(new Plant(2, 3));
+  
+  //zombies.add(new zombie(2));
+
 }
 
 void draw() {
@@ -30,7 +41,11 @@ void draw() {
     p.update();
     p.render();
   }
-  plant1.render();
+  
+  for (int i = 0; i < plants.size(); i++) {
+    Plant p = plants.get(i);
+    p.render();
+  }
   SunRender();
   for (int i=0; i<zombies.size(); i++) {
     zombie z=zombies.get(i);
@@ -39,16 +54,17 @@ void draw() {
     for (int u = 0; u < projectiles.size(); u++) {
       z.coll(projectiles.get(u));
     }
-    z.eat(plant1);
-   /*for (int y = 0; y < plants.size(); y++) {
+    //z.eat(plants.get(2));
+   for (int y = 0; y < plants.size(); y++) {
      z.eat(plants.get(y));
-   }*/
+   }
   }
   if (frameCount%360==1) {
     Suns.add(new Sun());
   }
-  if (frameCount%int(random(600, 1000))==1) {
-    zombies.add(new zombie(int(random(4))));
+  if (frameCount%int(random(100, 500))==1) {
+    //zombies.add(new zombie(int(random(4))));
+      zombies.add(new zombie(1));
   }
 }
 
