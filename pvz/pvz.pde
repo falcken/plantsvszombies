@@ -70,17 +70,30 @@ void draw() {
   if (frameCount%360==1) {
     Suns.add(new Sun());
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9241d9c3788fc435bf387bbeb7db61c3750eb44
   if (frameCount%int(random(100, 500))==1&&frameCount>3*60) {
     zombies.add(new zombie(int(random(4))));
       }
 
+<<<<<<< HEAD
 
+=======
+  if (frameCount%int(random(100, 500))==1) {
+    //zombies.add(new zombie(int(random(4))));
+      zombies.add(new zombie(1));
+  }
+>>>>>>> e9241d9c3788fc435bf387bbeb7db61c3750eb44
   text("Kills: "+kills, 500, 100);
   } else {
     gameOverScreen.render();
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9241d9c3788fc435bf387bbeb7db61c3750eb44
 }
 
 
