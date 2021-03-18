@@ -26,20 +26,12 @@ void setup() {
   shopSun.resize(70, 70);
   plant1Sprite = loadImage("plant1.png");
   plant1Sprite.resize(95, 97);
-  
-  // test plants
-  
-  //plants.add(new Plant(2, 0));
-  //plants.add(new Plant(2, 1));
-  //plants.add(new Plant(2, 2));
-  //plants.add(new Plant(2, 3));
-  
-  //zombies.add(new zombie(2));
-
+  startScreen();
 }
 
 void draw() {
-  if (!ended) {
+ if(frameCount<2);
+ else if (!ended) {
   background(255);
   level.render();
   shop.render();
@@ -67,23 +59,33 @@ void draw() {
      z.eat(plants.get(y));
    }
   }
-  if (frameCount%360==1) {
+  if (frameCount%360==2) {
     Suns.add(new Sun());
   }
 
+<<<<<<< Updated upstream
   if (frameCount%int(random(400, 1000))==1&&frameCount>3*60) {
     zombies.add(new zombie(int(random(4))));
       }
 
+=======
+
+
+
+  if (frameCount%int(random(100, 500))==1&&frameCount>3*60) {
+    zombies.add(new zombie(int(random(4))));
+      }
+>>>>>>> Stashed changes
   text("Kills: "+kills, 500, 100);
   } else {
     gameOverScreen.render();
   }
-
 }
 
 
-  
+void mousePressed(){
+  loop();
+}
 
 void SunRender() {
   for (int i=0; i<Suns.size(); i++) {
