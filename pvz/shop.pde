@@ -4,25 +4,25 @@ class Shop {
   float sizeY = 120;
   float borderWidth = 10;
   int balance=0;
-  
+
   Shop(float posX, float posY) {
     this.posX = posX;
     this.posY = posY;
   }
-  
+
   void render() {
     // background
     fill(149, 61, 37);
     rect(posX, posY, sizeX, sizeY); 
-    
+
     // sun area
     fill(104, 51, 21);
     rect(posX+borderWidth, posY+borderWidth, 100, sizeY-2*borderWidth);
     image(shopSun, posX+borderWidth+15, posY+borderWidth);
-    
+
     fill(216, 219, 180);
     rect(posX+borderWidth+13, posY+borderWidth+65, 75, 30);
-    
+
     // sun balance
     fill(0);
     textSize(16);
@@ -30,6 +30,20 @@ class Shop {
     
     //
     
+
+    //plants
+    fill(104, 51, 21);
+    rect(posX+borderWidth+110, posY+borderWidth, 100, sizeY-2*borderWidth);
+    fill(88, 196, 206);
+    rect(posX+borderWidth+120, posY+borderWidth+5, 80, (sizeY-2*borderWidth)*0.9);
+    image(plant1Sprite, posX+borderWidth+15+110, (sizeY-2*borderWidth)*0.9-plant1Sprite.height*0.7-7,plant1Sprite.width*0.65,plant1Sprite.height*0.65);
+
+    fill(216, 219, 180);
+    rect(posX+borderWidth+13+110, posY+borderWidth+65, 75, 30);
+    
+    //prize
+    fill(0);
+    textSize(16);
+    text(100, posX+borderWidth+30, posY+borderWidth+85);
   }
-  
 }

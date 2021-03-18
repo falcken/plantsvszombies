@@ -27,6 +27,10 @@ class zombie {
     println(posX, width-600, dead);
     if (dead == false) {
       println("render");
+    if (posX < width-500 || dead == false) {
+
+      image(zombie1Sprite,posX, posY,100,125);
+
       strokeWeight(2);
       stroke(0);
       fill(0);
