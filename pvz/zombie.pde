@@ -15,7 +15,7 @@ class zombie {
 
   zombie(int posRow) {
     this.posY = posRow*tileHeight+topOffset+marginTop+30;
-    speed = -1.25;
+    speed = -3.25;
     this.posX = posCol*tileWidth+leftOffset+80;
   }
 
@@ -43,6 +43,11 @@ class zombie {
         dead = true;
       }
     }
+    
+    if (posX < 50 && !dead) {
+      println("game over!");
+      handleGameEnd();
+    }
   }
   
   void coll(Projectile p) {
@@ -51,6 +56,7 @@ class zombie {
       p.dead = true;
       if (hp == 0) {
         dead = true;
+        kills++;
         //println("DEAD!");
       }
     }
@@ -63,7 +69,7 @@ class zombie {
      
      if (p.hp < 0) p.dead = true;
     } else if (p.dead || dead) {
-      speed = -1.25;
+      speed = -3.25;
     }
   }
 }
