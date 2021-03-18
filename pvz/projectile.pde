@@ -15,7 +15,7 @@ class Projectile {
   }
   
   void render() {
-    if (posX < width+100 && dead == false) {
+    if (posX < width+100 && dead == false && posX < width) {
       strokeWeight(4);
       stroke(0);
       fill(186, 246, 87);

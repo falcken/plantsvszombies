@@ -32,10 +32,9 @@ class Placeable {
       //rect(posX, posY, 50, 50);
       image(plant1Sprite, posX, posY, plant1Sprite.width*0.75, plant1Sprite.height*0.75);
 
-      if (clicked && vacant && posY > topOffset) {
-        plant();
+      if (mousePressed && vacant && posY > topOffset) {
         hidden = true;
-        clicked = false;
+        plant();
       }
     }
   }
