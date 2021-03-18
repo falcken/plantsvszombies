@@ -24,10 +24,10 @@ void setup() {
   
   // test plants
   
-  plants.add(new Plant(2, 0));
-  plants.add(new Plant(2, 1));
-  plants.add(new Plant(2, 2));
-  plants.add(new Plant(2, 3));
+  //plants.add(new Plant(2, 0));
+  //plants.add(new Plant(2, 1));
+  //plants.add(new Plant(2, 2));
+  //plants.add(new Plant(2, 3));
   
   //zombies.add(new zombie(2));
 
@@ -64,10 +64,9 @@ void draw() {
   if (frameCount%360==1) {
     Suns.add(new Sun());
   }
-  if (frameCount%int(random(100, 500))==1) {
-    //zombies.add(new zombie(int(random(4))));
-      zombies.add(new zombie(1));
-  }
+  if (frameCount%int(random(100, 500))==1&&frameCount>3*60) {
+    zombies.add(new zombie(int(random(4))));
+      }
 }
 
 
