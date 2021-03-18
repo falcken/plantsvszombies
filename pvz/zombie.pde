@@ -15,7 +15,7 @@ class zombie {
 
   zombie(int posRow) {
     this.posY = posRow*tileHeight+topOffset+marginTop+30;
-    speed = -3.25;
+    speed = -1.25;
     this.posX = posCol*tileWidth+leftOffset+80;
   }
 
