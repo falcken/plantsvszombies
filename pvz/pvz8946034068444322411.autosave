@@ -30,7 +30,7 @@ void setup() {
 }
 
 void draw() {
- if(frameCount<2);
+  if(frameCount<2);
  else if (!ended) {
   background(255);
   level.render();
@@ -63,16 +63,7 @@ void draw() {
     Suns.add(new Sun());
   }
 
-
   if (frameCount%int(random(400, 1000))==1&&frameCount>3*60) {
-    zombies.add(new zombie(int(random(4))));
-      }
-
-
-
-
-
-  if (frameCount%int(random(100, 500))==1&&frameCount>3*60) {
     zombies.add(new zombie(int(random(4))));
       }
 
@@ -80,12 +71,11 @@ void draw() {
   } else {
     gameOverScreen.render();
   }
+
 }
 
 
-void mousePressed(){
-  loop();
-}
+  
 
 void SunRender() {
   for (int i=0; i<Suns.size(); i++) {
