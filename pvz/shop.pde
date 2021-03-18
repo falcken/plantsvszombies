@@ -41,7 +41,7 @@ class Shop {
     fill(216, 219, 180);
     rect(posX+borderWidth+13+110, posY+borderWidth+65, 75, 30);
     
-    //prize
+    //price
     fill(0);
     textSize(16);
     text(100, posX+borderWidth+130, posY+borderWidth+85);

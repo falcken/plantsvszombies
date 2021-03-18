@@ -32,10 +32,10 @@ class Placeable {
       //rect(posX, posY, 50, 50);
       image(plant1Sprite, posX, posY, plant1Sprite.width*0.75, plant1Sprite.height*0.75);
 
-      
-      if (mousePressed && vacant) {
+      if (clicked && vacant && posY > topOffset) {
         plant();
         hidden = true;
+        clicked = false;
       }
     }
   }
@@ -45,7 +45,7 @@ class Placeable {
     hY = (mouseY-int(topOffset))/int(tileHeight);
 
     println(hX);
-    if (hX < 9 && hY < 4) {
+    if (hX < 9 && hY < 4 && hY > -1) {
       highlightX = hX*tileWidth+leftOffset;
       highlightY = hY*tileHeight+topOffset;
       
@@ -69,4 +69,5 @@ class Placeable {
   void plant() {
     plants.add(new Plant(hX, hY));
   }
+  
 }

@@ -7,11 +7,16 @@ IntList antiLag = new IntList();
 
 Level level = new Level();
 Placeable placeable = new Placeable();
+GameOverScreen gameOverScreen = new GameOverScreen();
 Shop shop = new Shop(30, 0);
 PImage sunSprite;
 PImage shopSun;
 PImage plant1Sprite;
 PImage zombie1Sprite;
+int kills = 0;
+boolean ended = false;
+boolean clicked = false;
+int frameCountAtEnd = 0;
 
 void setup() {
   size(1024, 768);
@@ -34,6 +39,7 @@ void setup() {
 }
 
 void draw() {
+  if (!ended) {
   background(255);
   level.render();
   shop.render();
@@ -64,9 +70,20 @@ void draw() {
   if (frameCount%360==1) {
     Suns.add(new Sun());
   }
+<<<<<<< HEAD
   if (frameCount%int(random(100, 500))==1&&frameCount>3*60) {
     zombies.add(new zombie(int(random(4))));
       }
+=======
+  if (frameCount%int(random(100, 500))==1) {
+    //zombies.add(new zombie(int(random(4))));
+      zombies.add(new zombie(1));
+  }
+  text("Kills: "+kills, 500, 100);
+  } else {
+    gameOverScreen.render();
+  }
+>>>>>>> 2803542ab50bd3f9483fb14ea0e81d937cd0afd2
 }
 
 
@@ -85,4 +102,13 @@ void SunRender() {
     Suns.remove(antiLag.get(i));
   }
   antiLag.clear();
+}
+
+void handleGameEnd() {
+  ended = true;
+  frameCountAtEnd = frameCount;
+}
+
+void mouseClicked() {
+  clicked = true;
 }
