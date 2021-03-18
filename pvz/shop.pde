@@ -27,6 +27,9 @@ class Shop {
     fill(0);
     textSize(16);
     text(balance, posX+borderWidth+30, posY+borderWidth+85);
+    
+    //
+    
   }
   
 }

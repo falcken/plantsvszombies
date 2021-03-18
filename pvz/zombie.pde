@@ -15,7 +15,7 @@ class zombie {
 
   zombie(int posRow) {
     this.posY = posRow*tileHeight+topOffset+marginTop+30;
-    speed = -2.5;
+    speed = -1.25;
     this.posX = posCol*tileWidth+leftOffset+80;
   }
 
@@ -24,7 +24,9 @@ class zombie {
   }
 
   void render() {
-    if (posX < width-500 || dead == false) {
+    println(posX, width-600, dead);
+    if (dead == false) {
+      println("render");
       strokeWeight(2);
       stroke(0);
       fill(0);
@@ -33,26 +35,30 @@ class zombie {
       fill(186, 246, 87);
       noStroke();
       rect(posX, posY, 10*hp, 10);
-    } else {
+    } else if (posX < width-600) {
       dead = true;
     }
   }
   
   void coll(Projectile p) {
-    if (p.posX > posX && p.posY > posY && p.posY < posY+100 && p.dead == false) {
-      hp--;
+    if (p.posX > posX && p.posY > posY && p.posY < posY+100 && p.dead == false && dead == false) {
+      hp-=2;
       p.dead = true;
+      if (hp == 0) {
+        dead = true;
+        println("DEAD!");
+      }
     }
   }
   
   void eat(Plant p) {
-    if (p.posX > posX-100 && p.posY > posY && p.posY < posY+100 && p.dead == false) {
+    if (p.posX > posX-100 && p.posY > posY && p.posY < posY+100 && p.dead == false && dead == false) {
       speed = 0;
       p.hp = p.hp-0.01;
      
      if (p.hp < 0) p.dead = true;
     } else {
-      speed = -2.5;
+      speed = -1.25;
     }
   }
 }

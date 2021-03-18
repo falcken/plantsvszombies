@@ -23,7 +23,7 @@ class Plant {
       posY = posRow*tileHeight+topOffset+marginTop;
       image(plant1Sprite, posCol*tileWidth+leftOffset+marginLeft, posRow*tileHeight+topOffset+marginTop);
       lifetime++;
-      if (lifetime % 180 == 0) {
+      if (lifetime % 120 == 0) {
         shoot();
       }
       fill(0);

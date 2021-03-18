@@ -47,7 +47,7 @@ void draw() {
   if (frameCount%360==1) {
     Suns.add(new Sun());
   }
-  if (frameCount%int(random(1, 50000))==1) {
+  if (frameCount%int(random(600, 1000))==1) {
     zombies.add(new zombie(int(random(4))));
   }
 }
