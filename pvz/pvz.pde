@@ -104,5 +104,7 @@ void handleGameEnd() {
 }
 
 void mouseClicked() {
-  clicked = true;
+  if (placeable.hidden == false) {
+    clicked = true;
+  }
 }
