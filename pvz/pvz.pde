@@ -6,6 +6,7 @@ ArrayList<Plant> plants = new ArrayList<Plant>();
 IntList antiLag = new IntList();
 
 Level level = new Level();
+Placeable placeable = new Placeable();
 Shop shop = new Shop(30, 0);
 PImage sunSprite;
 PImage shopSun;
@@ -36,6 +37,7 @@ void draw() {
   background(255);
   level.render();
   shop.render();
+  placeable.render();
   for (int i = 0; i < projectiles.size(); i++) {
     Projectile p = projectiles.get(i);
     p.update();
