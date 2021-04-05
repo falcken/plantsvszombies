@@ -2,7 +2,7 @@ String intro1="Welcome to Plants vs Zombies";
 String intro2="Plants kill zombies";
 String intro3="Collect suns to buy plants";
 String intro4="DON’T LET THE ZOMBIES GET PAST YOUR LAWN";
-String intro5="How long can you survive";
+String intro5="How long can you survive?";
 String intro6="Press the mouse to start";
 void startScreen(){
   background(255);
