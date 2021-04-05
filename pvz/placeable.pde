@@ -50,7 +50,7 @@ class Placeable {
       // check if slot is vacant
       for (int i = 0; i < plants.size(); i++) {
         Plant p = plants.get(i);
-        if (p.posCol == hX && p.posRow == hY) {
+        if (p.posCol == hX && p.posRow == hY && !p.dead) {
           vacant = false;
           fill(255, 0, 0);
           break;
