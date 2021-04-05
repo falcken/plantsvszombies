@@ -24,9 +24,7 @@ class zombie {
   }
 
   void render() {
-    //println(posX, width-600, dead);
     if (dead == false) {
-      //println("render");
     if (posX < width-500 || dead == false) {
 
       image(zombie1Sprite,posX, posY,100,125);
@@ -57,7 +55,6 @@ class zombie {
       if (hp == 0) {
         dead = true;
         kills++;
-        //println("DEAD!");
       }
     }
   }
@@ -69,7 +66,7 @@ class zombie {
      
      if (p.hp < 0) p.dead = true;
     } else if (p.dead || dead) {
-      speed = -3.25;
+      speed = -1.25;
     }
   }
 }

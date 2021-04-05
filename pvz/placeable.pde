@@ -43,7 +43,6 @@ class Placeable {
     hX = (mouseX-int(leftOffset))/int(tileWidth);
     hY = (mouseY-int(topOffset))/int(tileHeight);
 
-    println(hX);
     if (hX < 9 && hY < 4 && hY > -1) {
       highlightX = hX*tileWidth+leftOffset;
       highlightY = hY*tileHeight+topOffset;

@@ -35,7 +35,6 @@ class Plant {
   }
 
   void shoot() {
-    //  println("pew");
     if (dead == false) {
       projectiles.add(new Projectile(posCol*tileWidth+leftOffset+80, posRow*tileHeight+topOffset+marginTop+30));
     }

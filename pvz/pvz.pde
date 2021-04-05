@@ -59,20 +59,11 @@ void draw() {
      z.eat(plants.get(y));
    }
   }
-  if (frameCount%360==2) {
+  if (frameCount%120==2) {
     Suns.add(new Sun());
   }
 
-
-  if (frameCount%int(random(400, 1000))==1&&frameCount>3*60) {
-    zombies.add(new zombie(int(random(4))));
-      }
-
-
-
-
-
-  if (frameCount%int(random(100, 500))==1&&frameCount>3*60) {
+  if (frameCount%int(random(100, 400))==1&&frameCount>3*60) {
     zombies.add(new zombie(int(random(4))));
       }
 
